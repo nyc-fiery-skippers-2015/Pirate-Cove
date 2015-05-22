@@ -1,3 +1,7 @@
 class Post < ActiveRecord::Base
-  # Remember to create a migration!
+  validates :title, :presence => true
+  validates :body, :presence => true
+
+  has_and_belongs_to_many :tags
+  belongs_to :author, class_name: 'User'
 end
