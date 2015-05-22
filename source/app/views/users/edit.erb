@@ -1,0 +1,12 @@
+<form action="/users/<%= user.id %>/edit" method="POST">
+  <input type="hidden" name="_method" value="put"/>
+  <input type="text" name="user[name]" value="<%= user.name  %>"/>
+  <input type="text" name="user[email]" value="<%= user.email %>"/>
+  <input type="text" name="user[location]" value="<%= user.location %>"/>
+  <input type="submit" value="update user"/>
+</form>
+
+<form action="/users/<%= user.id %>/edit" method="POST">
+  <input type="hidden" name="_method" value="delete"/>
+  <input type="submit" value="delete user"/>
+</form>
