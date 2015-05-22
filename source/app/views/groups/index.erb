@@ -1,4 +1,4 @@
 <% groups.each do |group| %>
-  <% erb :'groups/show', locals: {group: group}
-<%end%>
-
+  <%= erb :'groups/_group_show', locals: {group: group} %>
+<% end %>
+<p><a href='/'>Land ahoy?</a></p>

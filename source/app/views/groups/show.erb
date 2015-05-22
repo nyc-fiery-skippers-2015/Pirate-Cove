@@ -1,8 +1,16 @@
-<%= group.name %>
-<%= group.owner %>
-<% group.users.each do |user| %>
-  <%= user.name %>
-<% end %>
-<a href= "/groups/<%= group.id %>/posts">Group Posts</a>
-<a href= "/groups/<%= group.id %>/edit">Edit Post</a>
-<%= group.created_at %>
+<div class='group'>
+  <p>Ship: <%= group.name %></p>
+<p>Captain: <%= group.owner.name %></p>
+<p>Crew:
+
+  <%= group.users.pluck(:name).join(", ") %>
+
+</p>
+<p><a href= "/groups/<%= group.id %>/posts">Crew Banter</a></p>
+<%if session[:user_id] == group.owner_id  %>
+  <p><a href= "/groups/<%= group.id %>/edit">Change yer ship name</a></p>
+  <%end%>
+
+<p><%= group.created_at %></p>
+<p><a href="/groups">Find another crew</a></p>
+</div>

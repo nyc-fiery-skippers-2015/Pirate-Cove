@@ -1,0 +1,11 @@
+<div class='group'>
+  <p>Crew: <a href="/groups/<%= group.id %>"><%= group.name %></a></p>
+<p>Captain: <%= group.owner.name %></p>
+
+<p><a href= "/groups/<%= group.id %>/posts">Crew Banter</a></p>
+<%if session[:user_id] == group.owner_id  %>
+  <p><a href= "/groups/<%= group.id %>/edit">Change yer ship name</a></p>
+  <%end%>
+
+<p><%= group.created_at %></p>
+</div>

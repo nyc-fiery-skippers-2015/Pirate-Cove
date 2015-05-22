@@ -1,4 +1,4 @@
-<form action="/posts/<%= post.id %>/edit" method="POST">
+<div class="container"><p><form action="/posts/<%= post.id %>/edit" method="POST">
   <input type="hidden" name="_method" value="put"/>
   <input type="text" name="post[title]" value="<%= post.title  %>"/>
   <input type="text" name="post[body]" value="<%= post.body %>"/>
@@ -7,5 +7,8 @@
 
 <form action="/posts/<%= post.id %>/edit" method="POST">
   <input type="hidden" name="_method" value="delete"/>
+  <input type="hidden" name="post[group_id]" value="<%=post.group_id %>"/>
   <input type="submit" value="Delete Post"/>
-</form>
+</form></p>
+<p><a href="/posts/<%= post.id %>">I take it back</a></p>
+</div>

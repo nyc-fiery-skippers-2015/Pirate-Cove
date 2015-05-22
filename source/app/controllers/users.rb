@@ -36,7 +36,7 @@ end
 
 post '/users/login' do
   current_user = User.find_by(email: params[:user][:email])
-  return [500, "No Email Found"] unless current_user
+  return [500, "Arrgghhh, ye be stupid?"] unless current_user
   if current_user.authenticate(params[:user][:password])
       session[:user_id] = current_user.id
       redirect "/users/#{current_user.id}"

@@ -3,7 +3,7 @@
 <div>Name: <%= user.name %></div>
 <div>Location: <%= user.location %></div>
 <div>Email: <%= user.email %></div>
-
+<p><a href='/'>Back to yer ship?</a></p>
 <% if session[:user_id] == user.id %>
   <form action="/users/logout" method="POST">
     <input type="submit" value="Logout"/>

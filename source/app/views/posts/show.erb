@@ -1,13 +1,14 @@
-<div class="container"><h1>Post <%= post.id %></h1></div>
+<div class="container"><h1><%= post.title %></h1></div>
 
 <div class="container">
 <div>Date: <%= post.created_at %></div>
 <div>Author: <a href="/users/<%= post.author_id %>/posts"><%= post.author.name %></a></div>
-<div>Title: <%= post.title %></div>
 <div>Body: <%= post.body %></div>
-<div>Tags: </div>
+<div>Tags:
   <% post.tags.each do |tag| %>
-    <div><a href="/tags/<%= tag.name %>"><%= tag.name %></a></div>
+    <a href="/tags/<%= tag.name %>"><%= tag.name %></a>
     <% end %>
-<a href="/groups/<%= post.group_id %>/posts">Back to Group</a>
+  </div>
+<p><a href="/posts/<%= post.id %>/edit">Ashamed?</a></p>
+<p><a href="/groups/<%= post.group_id %>/posts">Back to yer crew?</a></p>
 </div>
