@@ -1,6 +1,7 @@
 <%= group.name %>
 <%= group.owner %>
-<% group.posts.each do |post| %>
-  <% erb :"posts/show", locals: {post: post} %>
+<% group.users.each do |user| %>
+  <%= user.name %>
 <% end %>
+<a href= "/groups/<%= group.id %>/posts">Group Posts</a>
 <%= group.created_at %>
