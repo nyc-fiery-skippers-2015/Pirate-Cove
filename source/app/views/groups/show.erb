@@ -1,0 +1,6 @@
+<%= group.name %>
+<%= group.owner %>
+<% group.posts.each do |post| %>
+  <% erb :"posts/show", locals: {post: post} %>
+<% end %>
+<%= group.created_at %>
