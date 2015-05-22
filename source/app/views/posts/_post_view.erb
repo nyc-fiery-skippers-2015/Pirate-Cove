@@ -1,2 +1,9 @@
-<p>Title: <a href="/posts/<%= a.id %>"><%= a.title%></a></p>
-<p>Body: <%= a.body %></p>
+<p>Date: <%= p.created_at%></p>
+<p>Author: <%= p.author%></p>
+<p>Title: <a href="/posts/<%= p.id %>"><%= p.title%></a></p>
+<p>Body: <%= p.body %></p>
+<p>Tags: </p>
+  <% p.tags.each do |t| %>
+    <p><a href="/tags/<%= t.name %>"><%= t.name %></a></p>
+    <% end %>
+  <br>
