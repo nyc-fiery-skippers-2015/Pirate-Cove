@@ -1,6 +1,11 @@
 <div class='form'>
-<form action='/groups/<% group.id %>/edit' method='post' >
+<form action="/groups/<% group.id %>/edit" method='post' >
   <input type='hidden' name='_method' value='put' />
   <input type='text' name='group[name]' value="<%group.name%>"/>
+  <input type='submit' value='Edit Group' />
 </form>
-
+  <form action="/groups/<% group.id %>/edit" method='post'>
+    <input type='hidden' name='_method' value='delete' />
+    <input type='submit' value='Delete Group' />
+  </form>
+</div>
