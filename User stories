@@ -1,0 +1,25 @@
+User stories
+  -As a user, I want to be able to login/logout
+  -As a user, I want to be able to join/create a group
+  -As a user, I want to be able to post a message to the group
+  -As a user, I want to be able to tag a post
+  -As a user, I want to be able to delete my post
+  -As a user, I want to be able to edit my post
+  -As a user, I want to be able to see all posts with a specific tag
+  -posts in a group are only visible to the group
+  -posts can only be edited by the author of the post
+
+
+
+
+
+
+
+  Stretch:
+  -owner of group able to moderate... i.e. accept users, delete posts etc...
+  -As a user, I want to be able to send a private message
+    -As a user, I want to be able to comment on a post
+
+
+
+Models
