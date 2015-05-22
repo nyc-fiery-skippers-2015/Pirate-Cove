@@ -1,23 +1,23 @@
-get '/posts' do
-  all_posts = Post.all
-  erb :'/posts/index', locals:{posts: all_posts}
+get '/groups/:id/posts' do
+  group = Group.find_by(id: params[:id])
+  erb :'/posts/index', locals:{group: group}
 end
 
-get '/posts/new' do
+get '/groups/:id/posts/new' do
   require_logged_in
-  erb :'/posts/new'
+  cur_group = Group.find_by(id: params[:id])
+  erb :'/posts/new', locals:{group: cur_group}
 end
 
 get '/posts/:id' do
   cur_post = Post.find_by(id: params[:id])
-  author = User.find_by(id: cur_post.author_id)
   return [500, "Post does not exist"] unless cur_post
-  erb :'/posts/show', locals:{post: cur_post, author: author}
+  erb :'/posts/show', locals:{post: cur_post}
 end
 
 get '/posts/:id/edit' do
-  if session[:user_id] == Post.find_by(id: params[:id]).author_id
-    cur_post = Post.find_by(id: params[:id])
+  cur_post = Post.find_by(id: params[:id])
+  if session[:user_id] == cur_post.author_id
     return [500, "Post does not exist"] unless cur_post
     erb :'/posts/edit', locals:{post: cur_post}
   else
@@ -27,7 +27,8 @@ end
 
 post '/posts/new' do
   user_input = params[:post]
-  new_post = Post.new({title: user_input[:title], body: user_input[:body], author_id: session[:user_id, group_id:})
+  new_post = Post.new({title: user_input[:title], body: user_input[:body], group_id: user_input[:group]})
+  new_post.author = session[:user_id]
   tags = user_input[:tags].split(",").map{|tag|Tag.find_or_create_by(name:tag.strip)}
   tags.each{|tag|new_post.tags << tag}
   return [500, "Invalid Post"] unless new_post.save

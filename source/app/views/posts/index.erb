@@ -1,7 +1,7 @@
 <div class="container">
   <h1>All Posts</h1>
-  <% if posts %>
-    <% posts.each do |p| %>
+  <% if group.posts %>
+    <% group.posts.each do |p| %>
       <%= erb :'/posts/_post_view', locals:{p: p} %>
     <% end %>
   <% end %>
