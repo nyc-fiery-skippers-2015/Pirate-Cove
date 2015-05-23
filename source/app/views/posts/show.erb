@@ -2,7 +2,7 @@
 
 <div class="container">
 <div>Date: <%=set_date(post.created_at)%></div>
-<div>Author: <a href="/users/<%= post.author_id %>/posts"><%= post.author.name %></a></div>
+<div>Author: <a href="/users/<%= post.author_id %>"><%= post.author.name %></a></div>
 <div>Body: <%= post.body %></div>
 <div>Tags:
   <% post.tags.each do |tag| %>

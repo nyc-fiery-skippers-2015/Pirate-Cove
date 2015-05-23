@@ -15,11 +15,12 @@ get '/users/:id/edit' do
 end
 
 get '/users/:id' do
-    require_logged_in
+   require_logged_in
    current_user = User.find_by(id: params[:id])
    return [500, "User not found"] unless current_user
    erb :'users/show' , locals: {user: current_user}
 end
+
 
 post '/users/signup' do
   new_user = User.new(params[:user])

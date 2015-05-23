@@ -3,8 +3,15 @@
   width: 600px;
   padding: 20px 20px 20px 20px;
   background-color: rgba(0, 0, 0, .7);
+  word-wrap: break-word;
 
 }
+
+.container div {
+  padding-top: 5px;
+  padding-bottom: 15px;
+}
+
 th {
   text-align: left;
 }
@@ -40,11 +47,11 @@ a:hover {
   padding-bottom: 5px;
 }
 
-#last-resort {
-  width: 10%;
-  margin-left: auto;
-  margin-right: auto;
+.last-resort {
+  margin-left: 45%;
+  margin-right: 45%;
 }
+
 
 .move {
   text-align: center;

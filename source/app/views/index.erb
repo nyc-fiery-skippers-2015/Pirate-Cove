@@ -1,17 +1,16 @@
 <div class="container">
   <h1>Welcome to the Pirate Cove!!!</h1>
 
+  <% if !is_authenticated?%>
     <form action="/users/signup" method="get">
     <input type="submit" value="Are ye a pirate captain?"/>
   </form>
     <form action="/users/login" method="get">
     <input type="submit" value="What's yer password?"/>
   </form>
+  <%end%>
   <p class="move"><a href='/groups'>Find yer crew?</a></p>
   <% if current_user %>
-    <form action="/users/logout" method="POST">
-      <input type="submit" value="Logout"/>
-    </form>
     <form action="/users/<%= current_user.id %>" method="POST">
       <input type="submit" value="Me info"/>
     </form>
