@@ -9,15 +9,6 @@ get '/groups/new' do
   erb :'groups/new'
 end
 
-post '/groups/new' do
-  require_logged_in
-  user_input = params[:group]
-  new_group = Group.new(name: user_input[:name], owner: current_user)
-  new_group.users << current_user
-  return [500, "Invalid Group"] unless new_group.save
-  redirect "/groups/#{new_group.id}"
-end
-
 get '/groups/:id' do
   require_logged_in
   cur_group = Group.find_by(id: params[:id])
@@ -30,6 +21,28 @@ get '/groups/:id/edit' do
   cur_group = Group.find_by(id: params[:id])
   member_of?(cur_group)
   erb :'groups/edit', locals: {group: cur_group}
+end
+
+get '/groups/:id/join' do
+  require_logged_in
+  cur_group = Group.find_by(id: params[:id])
+  erb :'groups/join', locals: {group: cur_group}
+end
+
+post '/groups/new' do
+  require_logged_in
+  user_input = params[:group]
+  new_group = Group.new(name: user_input[:name], owner: current_user)
+  new_group.users << current_user
+  return [500, "Invalid Group"] unless new_group.save
+  redirect "/groups/#{new_group.id}"
+end
+
+post '/groups/:id/join' do
+  require_logged_in
+  cur_group = Group.find_by(id: params[:id])
+  cur_group.users << current_user
+  redirect "/groups/#{cur_group.id}"
 end
 
 put '/groups/:id/edit' do

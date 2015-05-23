@@ -1,3 +1,7 @@
-<% tag.posts.each do |post|%>
-    <a href = <%="/posts/#{post.id}"%>> <%= post.title%> </a>
-<%end%>    
+<div class="container">
+  <h1>All posts with tag "<%= tag.name %>"</h1>
+  <% tag.posts.each do |post|%>
+    <p>Post: <a href = <%="/posts/#{post.id}"%>> <%= post.title%> </a></p>
+  <%end%>
+  <p><a href="/groups">Back to yer crew</a></p>
+</div>

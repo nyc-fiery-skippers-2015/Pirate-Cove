@@ -1,0 +1,9 @@
+<div class='container'>
+  <p>Are ye sure you want to join this crew?</p>
+  <form action='/groups/<%= group.id %>/join' method='post' >
+    <input type='submit' value='Aye' />
+  </form>
+  <form action='/groups' method='get' >
+    <input type='submit' value='Nay' />
+  </form>
+</div>

@@ -19,7 +19,6 @@ get '/users/:id/edit' do
   erb :'users/edit', locals:{user: cur_user}
 end
 
-
 get '/users/:id' do
     require_logged_in
    current_user = User.find_by(id: params[:id])
@@ -48,6 +47,10 @@ end
 post '/users/logout' do
   session[:user_id] = nil
   redirect '/'
+end
+
+post '/users/:id' do
+  redirect "/users/#{current_user.id}"
 end
 
 put '/users/:id/edit' do

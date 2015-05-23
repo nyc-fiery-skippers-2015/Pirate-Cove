@@ -8,4 +8,12 @@
     <input type="submit" value="What's yer password?"/>
   </form>
   <p><a href='/groups'>Find yer crew?</a></p>
+  <% if current_user %>
+    <form action="/users/logout" method="POST">
+      <input type="submit" value="Logout"/>
+    </form>
+    <form action="/users/<%= current_user.id %>" method="POST">
+      <input type="submit" value="Me info"/>
+    </form>
+  <% end %>
 </div>
