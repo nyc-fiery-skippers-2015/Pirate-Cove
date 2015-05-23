@@ -1,5 +1,5 @@
-<div class='group'>
-  <p>Crew: <a href="/groups/<%= group.id %>"><%= group.name %></a></p>
+<div class='container'>
+  <p>Ship: <a href="/groups/<%= group.id %>"><%= group.name %></a></p>
   <p>Captain: <%= group.owner.name %></p>
   <p><a href= "/groups/<%= group.id %>/posts">Crew Banter</a></p>
   <% unless group.users.include?(current_user) %>
@@ -9,5 +9,5 @@
     <p><a href= "/groups/<%= group.id %>/edit">Change yer ship name</a></p>
   <%end%>
 
-  <p><%= group.created_at %></p>
+  <p><%=set_date(group.created_at)%></p>
 </div>

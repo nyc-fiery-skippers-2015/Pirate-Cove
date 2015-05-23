@@ -1,8 +1,11 @@
 .container {
   margin: 20px auto;
   width: 600px;
-  padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  padding: 20px 20px 20px 20px;
+  border: solid white 2px;
+  background-color: rgba(0, 0, 0, .7);
+
+
 }
 th {
   text-align: left;
@@ -12,4 +15,36 @@ th {
   border: 1px solid black;
   margin: 20px;
   padding: 0px 20px 20px 20px;
+}
+
+img {
+  height: 100px;
+  width: 150px;
+}
+
+
+html {
+  background-image: url(http://i300.photobucket.com/albums/nn35/fearandloathingbutterfly/cool%20pics/PirateShip.gif);
+  background-size: cover;
+  color: white;
+  font-family: 'IM Fell English SC';
+  font-size: 1.33em;
+
+}
+
+a {
+  color: darkred;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+#move {
+  text-align: center;
+}
+form {
+  text-align: center;
 }

@@ -15,3 +15,7 @@ end
 def member_of?(cur_group)
   redirect '/groups' unless cur_group.users.include?(current_user)
 end
+
+def set_date(timestamp)
+  timestamp.strftime("%d %B %Y")
+end

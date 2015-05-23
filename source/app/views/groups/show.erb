@@ -11,6 +11,6 @@
   <p><a href= "/groups/<%= group.id %>/edit">Change yer ship name</a></p>
   <%end%>
 
-<p><%= group.created_at %></p>
+<p><%=set_date(group.created_at)%></p>
 <p><a href="/groups">Find another crew</a></p>
 </div>

@@ -1,8 +1,3 @@
-get '/users' do
-  require_logged_in
-  users = User.all
-  erb :'users/index' , locals:{users: users}
-end
 
 get '/users/signup' do
   erb :'users/signup'

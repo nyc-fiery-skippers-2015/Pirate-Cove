@@ -1,7 +1,7 @@
 <div class="container"><h1><%= post.title %></h1></div>
 
 <div class="container">
-<div>Date: <%= post.created_at %></div>
+<div>Date: <%=set_date(post.created_at)%></div>
 <div>Author: <a href="/users/<%= post.author_id %>/posts"><%= post.author.name %></a></div>
 <div>Body: <%= post.body %></div>
 <div>Tags:
