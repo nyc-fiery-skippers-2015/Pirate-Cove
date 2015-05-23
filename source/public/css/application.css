@@ -16,16 +16,11 @@ th {
   text-align: left;
 }
 
-img {
-  height: 100px;
-  width: 150px;
-}
-
-
 
 html {
   background-image: url(http://data.hdwallpapers.im/crashed_ship.jpg);
   background-size: cover;
+  background-repeat: no-repeat;
   color: white;
   font-family: 'IM Fell English SC';
   font-size: 1.33em;
