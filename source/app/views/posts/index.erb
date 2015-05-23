@@ -1,12 +1,14 @@
-<div class="container">
+<div class="container move">
   <h1>All Posts</h1>
+  </div>
   <% if group.posts %>
     <% group.posts.each do |p| %>
       <%= erb :'/posts/_post_view', locals:{p: p} %>
     <% end %>
   <% end %>
 
+<div class="container">
   <p><a href="/groups/<%= group.id %>/posts/new">Say somethin'</a></p>
   <p><a href='/groups'>More rum?</a></p>
-
 </div>
+

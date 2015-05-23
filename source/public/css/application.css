@@ -2,19 +2,11 @@
   margin: 20px auto;
   width: 600px;
   padding: 20px 20px 20px 20px;
-  border: solid white 2px;
   background-color: rgba(0, 0, 0, .7);
-
 
 }
 th {
   text-align: left;
-}
-
-.group {
-  border: 1px solid black;
-  margin: 20px;
-  padding: 0px 20px 20px 20px;
 }
 
 img {
@@ -23,13 +15,13 @@ img {
 }
 
 
+
 html {
-  background-image: url(http://i300.photobucket.com/albums/nn35/fearandloathingbutterfly/cool%20pics/PirateShip.gif);
+  background-image: url(http://data.hdwallpapers.im/crashed_ship.jpg);
   background-size: cover;
   color: white;
   font-family: 'IM Fell English SC';
   font-size: 1.33em;
-
 }
 
 a {
@@ -42,9 +34,22 @@ a:hover {
   text-decoration: underline;
 }
 
-#move {
+.display {
+  display: inline-block;
+  padding-top: 20px;
+  padding-bottom: 5px;
+}
+
+#last-resort {
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.move {
   text-align: center;
 }
+
 form {
   text-align: center;
 }
