@@ -46,7 +46,6 @@ post '/groups/:id/join' do
 end
 
 put '/groups/:id/edit' do
-  user_input = params[:group]
   cur_group = Group.find_by(id: params[:id])
   cur_group.update(params[:group])
   redirect "/groups/#{cur_group.id}"
