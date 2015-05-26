@@ -1,4 +1,3 @@
-
 get '/users/signup' do
   erb :'users/signup'
 end
@@ -49,6 +48,7 @@ post '/users/:id' do
   redirect "/users/#{current_user.id}"
 end
 
+#CD: It should not have the word Edit by it
 put '/users/:id/edit' do
   cur_user = User.find_by(id: params[:id])
   cur_user.update(params[:user])
@@ -56,10 +56,9 @@ put '/users/:id/edit' do
   redirect "/users/#{cur_user.id}"
 end
 
+#CD: It should not have the word Edit by it
 delete '/users/:id/edit' do
   cur_user = User.find_by(id: params[:id])
   cur_user.destroy
   redirect '/'
 end
-
-

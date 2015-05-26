@@ -19,16 +19,17 @@
   <title></title>
 </head>
 <body>
+  <!-- Layout should have as minimal code as possible so make this a partial --> 
   <div class='last-resort'>
   <form class='display' action='/' method='get'>
     <input type='submit' value='Home' />
   </form>
   <%if is_authenticated?%>
-  <form class='display' action='/users/logout' method='post'>
-    <input type='submit' value='Logout' />
-  </form>
+    <form class='display' action='/users/logout' method='post'>
+      <input type='submit' value='Logout' />
+    </form>
   <%end%>
-</div>
+  </div>
 
   <%= yield %>
 

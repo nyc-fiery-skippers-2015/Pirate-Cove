@@ -14,6 +14,7 @@ end
 get '/posts/:id' do
   require_logged_in
   cur_post = Post.find_by(id: params[:id])
+  #ZM: cur_group = cur_post.group
   cur_group = Group.find_by(id: cur_post.group_id)
   member_of?(cur_group)
   return [500, "Post does not exist"] unless cur_post
@@ -35,8 +36,11 @@ end
 post '/posts/new' do
   user_input = params[:post]
   new_post = Post.new(title: user_input[:title], body: user_input[:body], author: current_user, group_id: user_input[:group])
+  #ZM: Do this with the do syntax or make it a contrller method
   tags = user_input[:tags].split(",").map{|tag|Tag.find_or_create_by(name:tag.strip)}
+  #ZM: new_post.tags += tags 
   tags.each{|tag|new_post.tags << tag}
+
   return [500, "Invalid Post"] unless new_post.save
   redirect "/posts/#{new_post.id}"
 end
